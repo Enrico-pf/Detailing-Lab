@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailing Lab București</title>
+
+  <!-- AICI vom instala ulterior Google Tag Manager -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .hero {
+      padding: 60px 0;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      margin-top: 15px;
+    }
+
+    form {
+      margin-top: 60px;
+      padding: 30px;
+      border: 1px solid #ddd;
+    }
+
+    input, select {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      margin: 8px 0 20px;
+    }
+
+    button {
+      padding: 14px 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1>Detailing interior auto în București</h1>
+
+    <p>
+      Curățare în profunzime, fără lucrări făcute pe grabă.
+    </p>
+
+    <p class="price">Detailing interior de la 700 lei</p>
+
+    <a class="button" id="offer-button" href="#formular">
+      Cere o ofertă
+    </a>
+  </section>
+
+  <form id="formular">
+    <h2>Solicită o ofertă</h2>
+
+    <label for="name">Nume</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="phone">Telefon</label>
+    <input id="phone" name="phone" type="tel" required>
+
+    <label for="service">Serviciu dorit</label>
+    <select id="service" name="service">
+      <option>Detailing interior</option>
+      <option>Polish</option>
+      <option>Polish + protecție ceramică</option>
+      <option>Nu sunt sigur</option>
+    </select>
+
+    <label for="when">Când dorești programarea?</label>
+    <select id="when" name="when">
+      <option>Cât mai curând</option>
+      <option>În următoarele 2 săptămâni</option>
+      <option>Luna aceasta</option>
+      <option>Doar mă informez</option>
+    </select>
+
+    <button type="submit">Trimite cererea</button>
+  </form>
+
+  <p id="success-message" style="display:none;">
+    Mulțumim! Cererea a fost trimisă.
+  </p>
+
+  <script>
+    document.getElementById("formular").addEventListener("submit", function(event) {
+      event.preventDefault();
+      this.style.display = "none";
+      document.getElementById("success-message").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
