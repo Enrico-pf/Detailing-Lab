@@ -120,9 +120,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script>
     document.getElementById("formular").addEventListener("submit", function(event) {
-      event.preventDefault();
-      this.style.display = "none";
-      document.getElementById("success-message").style.display = "block";
+  event.preventDefault();
+
+  const selectedService = document.getElementById("service").value;
+
+  window.dataLayer = window.dataLayer || [];
+
+  window.dataLayer.push({
+    event: "lead_form_success",
+    service_type: selectedService
+  });
+
+  this.style.display = "none";
+  document.getElementById("success-message").style.display = "block";
+});
     });
   </script>
 
